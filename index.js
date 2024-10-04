@@ -117,10 +117,10 @@ if(!tasksContainer) {
       taskElement.setAttribute('data-task-id', task.id);
 
       // Listen for a click event on each task and open a modal
-      taskElement.click() => { 
+      taskElement.addEventListener('click', () => {
         openEditTaskModal(task);
       });
-
+      
       tasksContainer.appendChild(taskElement);
     });
   });
