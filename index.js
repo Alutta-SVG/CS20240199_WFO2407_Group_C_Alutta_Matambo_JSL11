@@ -248,12 +248,17 @@ function addTask(event) {
 
 
 function toggleSidebar(show) {
-  const sidebar = document.getElementById('side-bar');
+  const sidebar = document.getElementById('sidebar');
+  const showSideBarBtn = document.getElementById ('show-side-bar-btn');
   localStorage.setItem("showSideBar", show ? "true" : "false");
+  sidebar.style.display = show  ? 'block' : 'none';
+  showSideBarBtn.style.display  = show ? 'none' : 'block';
 }
 
 function toggleTheme() {
-  document.body.classList.toggle("dark-theme");
+  document.body.classList.toggle("light-theme");
+  const isLightTheme = document.body.classList.contains("light-theme")
+  localStorage.setItem("light-theme",  isLightTheme ? "true" : "false");
 }
 
 
