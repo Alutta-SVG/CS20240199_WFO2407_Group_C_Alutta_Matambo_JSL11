@@ -277,7 +277,9 @@ function openEditTaskModal(task) {
   const cancelEditBtn =  document.getElementById("cancel-edit-task-btn");
 
   // Call saveTaskChanges upon click of Save Changes button
- 
+  saveTaskChangesBtn.addEventListener('click', () => {
+    saveTaskChanges(task.id);
+   });
 
   // Delete task using a helper function and close the task modal
 
@@ -292,7 +294,7 @@ function saveTaskChanges(taskId) {
   // Create an object with the updated task details
 
 
-  // Update task using a hlper functoin
+  // Update task using a helper function
  
 
   // Close the modal and refresh the UI to reflect the changes
@@ -307,6 +309,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function init() {
+  initializeData();
   setupEventListeners();
   const showSidebar = localStorage.getItem('showSideBar') === 'true';
   toggleSidebar(showSidebar);
